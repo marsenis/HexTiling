@@ -1,0 +1,46 @@
+body {
+  margin: auto;
+  text-align: center;
+}
+.license {
+  margin-top: 1em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.col {
+  float: left;
+}
+
+.author {
+  text-align: left;
+  font-size: 13pt;
+  
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.author .name {
+  font-weight: bold;
+}
+
+.text div {
+  text-align: justify;
+  margin-left: 10px;
+}
+
+.graphics {
+  width: 400px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#drawButton {
+  margin-top: 20px;
+}

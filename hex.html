@@ -1,0 +1,121 @@
+<html>
+
+<head>
+<title>Rhombus Tilling of Regular Hexagon</title>
+
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="js/paper.js">
+</script>
+
+<script type="text/javascript">
+globals = {};
+</script>
+
+<!-- Define inlined PaperScript associate it with canv -->
+<script type="text/paperscript" canvas="canv" src="js/hex.js">
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/hex.css">
+
+</head>
+
+<body>
+
+<div class="row">
+
+<div class="col text">
+
+<h1>Tiling a Regular Hexagon with Rhombuses</h1>
+
+<div class="author">
+<span class="name">Makis Arsenis</span>
+<span class="email">&lt;marsenis 'at' gmail 'dot' com&gt;</span>
+</div>
+
+<div>
+
+<p>
+Consider the problem of counting the number of ways one can tile a regular
+hexagon of side N with unit-sized rhombuses. Each rhombus is allowed to be
+rotated in three ways, depicted with three different colors in the figure on
+the right. In solving this problem, it is useful to introduce some bijections
+between tilings, cube stackings in 3D space and vertex disjoint paths on a
+grid.  The purpose of this exposition is to provide an interactive tool for
+understanding one side of such a bijection.
+</p>
+
+<p>
+For example, look at the figure on the right where a hexagon of side N = 4 is
+tilled with rhombuses. It might be a bit unintuitive at first, but with some
+imagination one can interpret the picture as showing cubes, stacked on top of
+each other in 3D space. Specifically, the red tiles correspond to top faces of
+cubes (or sometimes parts of the "floor" of the room), and the blue and yellow
+tiles correspond to side faces (or parts of the "walls" of the room). One way
+to represent a given configuration of stacked cubes is by an NxN matrix of
+integers denoting the height of each stack. An example of such a matrix is
+shown on the right corresponding to the particular tiling on the picture.
+</p>
+
+<p>
+A given tiling can always be viewed as such a configuration of stacked cubes
+(and vice-versa) provided that no stack of cubes is completely hidden behind
+others. In the matrix representation, this condition translates to the
+requirement that the elements of each row and column are in <em>decreasing
+order</em>.
+</p>
+
+<p>
+This tool allows you to edit the matrix of cube stack heights to any other
+valid configuration and by clicking <em>Draw</em> it will automatically produce
+the corresponding tiling of the hexagon. Try it out! You can modify the value
+of N by just adding/removing rows/columns. Just make sure the matrix is still
+valid, i.e. for an NxN matrix, each entry should be an integer in the interval
+[0, N] and every row and column should be decreasing in left-to-right and
+top-to-bottom order respectively.
+</p>
+
+</div>
+
+</div>
+
+<div class="col graphics">
+
+<div>
+<canvas id="canv" Height="400px" Width="400px"></canvas>
+</div>
+
+<div id="errDiv" class="alert alert-danger" role="alert" style="display:none;">
+  Syntax Error!
+</div>
+<div id="alertDiv" class="alert alert-danger" role="alert" style="display:none;">
+  Invalid array!
+</div>
+
+<div>
+<textarea id="blocksMatrix" rows="10" cols="40" style="font-family: monospace;">
+[ [4, 3, 3, 0],
+  [3, 2, 1, 0],
+  [2, 1, 1, 0],
+  [1, 1, 1, 0] ]
+</textarea>
+</div>
+
+<div>
+<input type="button" class="btn btn-primary" value="Draw" id="drawButton" onclick="globals.init()"/>
+</div>
+
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<div class='license'>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+</body>
+
+</html>
