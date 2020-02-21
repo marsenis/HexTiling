@@ -46,3 +46,8 @@ body {
 #drawButton {
   margin-top: 20px;
 }
+
+.ps {
+  font-style: italic;
+  font-size: 10pt;
+}
