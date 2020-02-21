@@ -8,6 +8,8 @@ body {
   bottom: 0;
   width: 100%;
   text-align: center;
+  line-height: 0.1em;
+  font-size: 10pt;
 }
 
 .col {
